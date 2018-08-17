@@ -1,0 +1,98 @@
+.header {
+  background-color: #212d38;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  button {
+    min-height: 57px;
+  }
+
+  .navigation {
+
+    .active {
+      // border-bottom: 2px solid $primary;
+      background-color: rgba(3, 3, 3, 0.2);
+      // padding-bottom: 10px;
+      color: #fff;
+      // padding: 10px 0 ;
+    }
+
+    .logo {
+
+      img {
+        height: 35px;
+      }
+
+      h1 {
+        display: inline-block;
+        font-size: 19px;
+        color: white;
+        font-weight: 600;
+        // top: 13px;
+        // position: absolute;
+      }
+    }
+
+  }
+
+  .actions {
+    margin-left: auto;
+    display: flex;
+
+    .toolbar-button {
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .icon-button {
+          height: 100%;
+          padding: 0;
+          min-width: 50px;
+
+          mat-icon {
+
+            .mat-badge-content {
+              color: #fff;
+            }
+          }
+      }
+
+      .dropdown {
+          background: white;
+          position: absolute;
+          top: 50px;
+          right: 0;
+          min-width: 350px;
+          z-index: -1;
+          transform: translateY(-110%) scale(0);
+          transform-origin: top right;
+          visibility: hidden;
+          transition: transform .4s cubic-bezier(.25,.8,.25,1), visibility .4s cubic-bezier(.25,.8,.25,1);
+
+          // @media screen and (max-width: 599px) {
+          // min-width: 100vw;
+          // right: -147px; // width of user-button + quickpanel-button
+          // }
+
+          &.open {
+              transform: translateY(0) scale(1);
+              visibility: visible;
+          }
+      }
+
+      @media only screen and (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+  }
+}

@@ -1,0 +1,62 @@
+
+<div class="header mat-elevation-z6">
+
+    <div class="navigation">
+
+        <button mat-button class="logo" routerLink="/home">
+            <img src="./assets/img/logo.png">
+            <h1>GYMO</h1>
+        </button>
+
+        <button mat-button routerLinkActive="active" routerLink="/home">
+          <mat-icon>home</mat-icon>
+          <a>Home</a>
+        </button>
+
+        <button mat-button routerLinkActive="active" routerLink="/workout">
+          <i class="material-icons">dashboard</i>
+          <a>Workout</a>
+        </button>
+
+        <button mat-button routerLinkActive="active" routerLink="/dashboard">
+          <i class="material-icons">dashboard</i>
+          <a>Dashboard</a>
+        </button>
+
+        <button mat-button routerLinkActive="active" routerLink="/past">
+          <i class="material-icons">dashboard</i>
+          <a>Past</a>
+        </button>
+
+        <button mat-button routerLinkActive="active" routerLink="/exrecises">
+          <i class="material-icons">dashboard</i>
+          <a>Exrecises</a>
+        </button>
+    </div>
+
+    <div class="actions"(msClickOutside)="onClickOutside2()">
+          <button class="icon-button" type="button" mat-button (click)="toggleDropdown2()" [class.open]="isOpen2">
+            <mat-icon matBadge="8" matBadgeSize="medium" matBadgeColor="primary" [matBadgeHidden]="false">notifications_active</mat-icon>
+          </button>
+          <div class="toolbar-button" >
+              <div class="dropdown mat-elevation-z1" [class.open]="isOpen2">
+                <app-user-notifications></app-user-notifications>
+              </div>
+          </div>
+
+          <button class="navigation-mobile-trigger2" mat-button [matMenuTriggerFor]="menu6">
+              <img class="avatar" src="../assets/img/profile-sm.jpg">
+          </button>
+          <mat-menu #menu6="matMenu">
+              <button mat-menu-item (click)="null" routerLink="/">
+                  <mat-icon>settings</mat-icon>
+                  <span>Settings</span>
+              </button>
+              <mat-divider></mat-divider>
+              <button mat-menu-item (click)="null">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>Logout</span>
+              </button>
+          </mat-menu>
+    </div>
+</div>
